@@ -31,6 +31,8 @@ function addItem(containerId) {
 
     saveShopping();
     saveCheckboxes();
+}
+    
 function saveShopping() {
 
     localStorage.setItem(
