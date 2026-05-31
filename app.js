@@ -31,16 +31,53 @@ function addItem(containerId) {
 
     saveShopping();
     saveCheckboxes();
-}
 function saveShopping() {
 
     localStorage.setItem(
         "mealIngredients",
         document.getElementById("mealIngredients").innerHTML
     );
+
+    localStorage.setItem(
+        "weeklyStaples",
+        document.getElementById("weeklyStaples").innerHTML
+    );
+
+    localStorage.setItem(
+        "miloItems",
+        document.getElementById("miloItems").innerHTML
+    );
 }
 
 function loadShopping() {
+
+    const meal =
+        localStorage.getItem("mealIngredients");
+
+    if(meal) {
+        document.getElementById(
+            "mealIngredients"
+        ).innerHTML = meal;
+    }
+
+    const staples =
+        localStorage.getItem("weeklyStaples");
+
+    if(staples) {
+        document.getElementById(
+            "weeklyStaples"
+        ).innerHTML = staples;
+    }
+
+    const milo =
+        localStorage.getItem("miloItems");
+
+    if(milo) {
+        document.getElementById(
+            "miloItems"
+        ).innerHTML = milo;
+    }
+}
 
     const saved =
         localStorage.getItem("mealIngredients");
