@@ -107,3 +107,22 @@ padding: 6px 0;
 .shopping-item input {
     margin: 0;
 }
+.shopping-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+.delete-btn {
+    background: #ff4d4d;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #e60000;
+}
