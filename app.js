@@ -22,6 +22,7 @@ function addMealIngredient() {
     </label>`;
 
     saveShopping();
+    saveCheckboxes();
 }
 function saveShopping() {
 
@@ -46,4 +47,63 @@ function loadShopping() {
 window.onload = function() {
 
     loadShopping();
+
+    loadCheckboxes();
+
+    document.addEventListener(
+        "change",
+        function(event){
+
+            if(
+                event.target.type ===
+                "checkbox"
+            ){
+                saveCheckboxes();
+            }
+        }
+    );
 };
+function saveCheckboxes() {
+
+    const checkboxes =
+        document.querySelectorAll(
+            "#mealIngredients input[type='checkbox']"
+        );
+
+    const states = [];
+
+    checkboxes.forEach(box => {
+        states.push(box.checked);
+    });
+
+    localStorage.setItem(
+        "mealIngredientStates",
+        JSON.stringify(states)
+    );
+}
+function loadCheckboxes() {
+
+    const saved =
+        localStorage.getItem(
+            "mealIngredientStates"
+        );
+
+    if (!saved) return;
+
+    const states =
+        JSON.parse(saved);
+
+    const checkboxes =
+        document.querySelectorAll(
+            "#mealIngredients input[type='checkbox']"
+        );
+
+    checkboxes.forEach((box,index) => {
+
+        if(states[index] !== undefined) {
+
+            box.checked =
+                states[index];
+        }
+    });
+}
