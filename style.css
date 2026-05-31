@@ -123,3 +123,6 @@ margin-top: 0;
 .shopping-item {
     border: 2px solid red !important;
 }
+body {
+    background: red !important;
+}
