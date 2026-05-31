@@ -56,10 +56,6 @@ margin-bottom: 15px;
 margin-top: 0;
 }
 
-.shopping-category label {
-display: block;
-padding: 6px 0;
-}
 .shopping-category button {
 
     border: none;
@@ -88,7 +84,7 @@ padding: 6px 0;
     align-items: center;
 }
 
-.shopping-category label {
+.shopping-category label:not(.shopping-item) {
     padding: 8px 0;
 }
 
@@ -100,9 +96,9 @@ padding: 6px 0;
     margin: 0;
 }
 .shopping-item {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     width: 100%;
     padding: 8px 0;
 }
@@ -110,6 +106,7 @@ padding: 6px 0;
     display: flex;
     align-items: center;
     gap: 10px;
+    flex: 1;
 }
 .delete-btn {
     background: #1877f2;
