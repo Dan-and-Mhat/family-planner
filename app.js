@@ -23,11 +23,40 @@ function addItem(containerId) {
     </span>
 
     <button
-        class="delete-btn"
-        onclick="deleteItem(this)">
-        🗑
-    </button>
+    class="edit-btn"
+    onclick="editItem(this)">
+    ✏️
+</button>
+
+<button
+    class="delete-btn"
+    onclick="deleteItem(this)">
+    🗑
+</button>
 </label>`;
+
+    saveShopping();
+    saveCheckboxes();
+}
+function editItem(button) {
+
+    const itemText =
+        button.parentElement
+              .querySelector("span");
+
+    const currentText =
+        itemText.textContent.trim();
+
+    const newText =
+        prompt("Edit item:", currentText);
+
+    if (!newText) return;
+
+    itemText.innerHTML = `
+        <input type="checkbox"
+               ${itemText.querySelector("input").checked ? "checked" : ""}>
+        ${newText}
+    `;
 
     saveShopping();
     saveCheckboxes();
