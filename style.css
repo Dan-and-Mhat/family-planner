@@ -125,3 +125,7 @@ margin-top: 0;
     padding: 6px 10px;
     margin-right: 5px;
 }
+.item-buttons {
+    display: flex;
+    gap: 5px;
+}
