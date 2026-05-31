@@ -60,3 +60,19 @@ margin-top: 0;
 display: block;
 padding: 6px 0;
 }
+.shopping-category button {
+
+    float: right;
+
+    border: none;
+
+    background: #007aff;
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 4px 10px;
+
+    cursor: pointer;
+}
