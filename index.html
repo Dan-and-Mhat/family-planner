@@ -43,8 +43,18 @@
         Chicken Breast
     </span>
 
+<button
+    class="edit-btn"
+    onclick="editItem(this)">
+    ✏️
+</button>
 <div class="item-buttons">
 
+<button
+    class="delete-btn"
+    onclick="deleteItem(this)">
+    🗑
+</button>
     <button
         class="edit-btn"
         onclick="editItem(this)">
@@ -79,12 +89,10 @@
 </label>
 
 <label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Rice
-</span>
-
-<div class="item-buttons">
+    <span>
+        <input type="checkbox">
+        Rice
+    </span>
 
 <button
     class="edit-btn"
@@ -97,16 +105,13 @@
     onclick="deleteItem(this)">
     🗑
 </button>
-
-</div>
+</label>
 
 <label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Pizza Base
-</span>
-
-<div class="item-buttons">
+    <span>
+        <input type="checkbox">
+        Pizza Base
+    </span>
 
 <button
     class="edit-btn"
@@ -119,9 +124,9 @@
     onclick="deleteItem(this)">
     🗑
 </button>
-
+</label>
 </div>
-    
+
 <div class="shopping-category">
     <h3>
         ⭐ Weekly Staples
@@ -129,14 +134,30 @@
     </h3>
 
     <div id="weeklyStaples">
-    
-<label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Milk
-</span>
 
-<div class="item-buttons">
+<label class="shopping-item">
+    <span>
+        <input type="checkbox">
+        Milk
+    </span>
+<button
+    class="edit-btn"
+    onclick="editItem(this)">
+    ✏️
+</button>
+
+<button
+    class="delete-btn"
+    onclick="deleteItem(this)">
+    🗑
+</button>
+</label>
+
+<label class="shopping-item">
+    <span>
+        <input type="checkbox">
+        Bread
+    </span>
 
 <button
     class="edit-btn"
@@ -149,17 +170,13 @@
     onclick="deleteItem(this)">
     🗑
 </button>
-
-</div>
+</label>
 
 <label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Bread
-</span>
-
-<div class="item-buttons">
-
+    <span>
+        <input type="checkbox">
+        Eggs
+    </span>
 <button
     class="edit-btn"
     onclick="editItem(this)">
@@ -171,28 +188,7 @@
     onclick="deleteItem(this)">
     🗑
 </button>
-
-</div>
-
-<label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Eggs
-</span>
-
-<div class="item-buttons">
-
-<button
-    class="edit-btn"
-    onclick="editItem(this)">
-    ✏️
-</button>
-
-<button
-    class="delete-btn"
-    onclick="deleteItem(this)">
-    🗑
-</button>
+</label>
 
 </div>
 
@@ -205,13 +201,10 @@
     <div id="miloItems">
 
 <label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Dried Food
-</span>
-
-<div class="item-buttons">
-
+    <span>
+        <input type="checkbox">
+        Dried Food
+    </span>
 <button
     class="edit-btn"
     onclick="editItem(this)">
@@ -223,17 +216,13 @@
     onclick="deleteItem(this)">
     🗑
 </button>
-
-</div>
+</label>
 
 <label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Wet Food
-</span>
-
-<div class="item-buttons">
-
+    <span>
+        <input type="checkbox">
+        Wet Food
+    </span>
 <button
     class="edit-btn"
     onclick="editItem(this)">
@@ -245,17 +234,13 @@
     onclick="deleteItem(this)">
     🗑
 </button>
-
-</div>
+</label>
 
 <label class="shopping-item">
-<span>
-    <input type="checkbox">
-    Treats
-</span>
-
-<div class="item-buttons">
-
+    <span>
+        <input type="checkbox">
+        Treats
+    </span>
 <button
     class="edit-btn"
     onclick="editItem(this)">
@@ -267,6 +252,7 @@
     onclick="deleteItem(this)">
     🗑
 </button>
+</label>
 
 </div>
 
@@ -276,7 +262,7 @@
     <h2>🍽 Meals</h2>
     <p>Meal planner coming soon...</p>
 </section>
-    
+
 <section id="favourites" style="display:none;">
     <h2>⭐ Favourites</h2>
     <p>Favourite recipes coming soon...</p>
