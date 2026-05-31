@@ -96,18 +96,14 @@ margin-top: 0;
     margin: 0;
 }
 .shopping-item {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100%;
-    padding: 8px 0;
-}
-.shopping-item span {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    flex: 1;
+    width: 100%;
+    padding: 4px 0;
+    min-height: 36px;
 }
+
 .delete-btn {
     background: #1877f2;
     border: none;
@@ -119,10 +115,4 @@ margin-top: 0;
 
 .delete-btn:hover {
     background: #e60000;
-}
-.shopping-item {
-    border: 2px solid red !important;
-}
-body {
-    background: red !important;
 }
