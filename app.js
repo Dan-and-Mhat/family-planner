@@ -15,11 +15,29 @@ function addMealIngredient() {
     const container =
         document.getElementById("mealIngredients");
 
-   container.innerHTML +=
-    `<label class="shopping-item">
+ container.innerHTML += `
+<label class="shopping-item">
+    <span>
         <input type="checkbox">
         ${item}
-    </label>`;
+    </span>
+
+    <button
+        class="delete-btn"
+        onclick="deleteItem(this)">
+        🗑
+    </button>
+</label>`;
+
+    saveShopping();
+    saveCheckboxes();
+}
+function deleteItem(button) {
+
+    const item =
+        button.parentElement;
+
+    item.remove();
 
     saveShopping();
     saveCheckboxes();
