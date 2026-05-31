@@ -45,3 +45,18 @@ margin-bottom: 5px;
 h2 {
 margin-top: 0;
 }
+.shopping-category {
+background: #f8f8fa;
+padding: 15px;
+border-radius: 12px;
+margin-bottom: 15px;
+}
+
+.shopping-category h3 {
+margin-top: 0;
+}
+
+.shopping-category label {
+display: block;
+padding: 6px 0;
+}
