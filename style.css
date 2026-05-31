@@ -97,11 +97,12 @@ margin-top: 0;
 }
 .shopping-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 4px 0;
-    min-height: 36px;
+    gap: 8px;
+    padding: 6px 0;
+}
+.shopping-item span {
+    flex: 1;
 }
 
 .delete-btn {
@@ -124,8 +125,4 @@ margin-top: 0;
     cursor: pointer;
     padding: 6px 10px;
     margin-right: 5px;
-}
-.item-buttons {
-    display: flex;
-    gap: 5px;
 }
