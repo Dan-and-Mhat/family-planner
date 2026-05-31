@@ -6,7 +6,7 @@ function showTab(tabName) {
 
     document.getElementById(tabName).style.display = "block";
 }
-function addMealIngredient() {
+function addItem(containerId) {
 
     const item = prompt("New ingredient:");
 
