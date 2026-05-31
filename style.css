@@ -89,19 +89,11 @@ padding: 6px 0;
 }
 
 .shopping-category label {
-    display: block;
     padding: 8px 0;
 }
 
 .shopping-category input[type="checkbox"] {
     margin-right: 10px;
-}
-.shopping-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-    margin: 0;
 }
 
 .shopping-item input {
