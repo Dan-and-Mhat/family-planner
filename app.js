@@ -8,14 +8,14 @@ function showTab(tabName) {
 }
 function addItem(containerId) {
 
-    const item = prompt("New ingredient:");
+    const item = prompt("New item:");
 
     if (!item) return;
 
     const container =
-        document.getElementById("mealIngredients");
+        document.getElementById(containerId);
 
- container.innerHTML += `
+    container.innerHTML += `
 <label class="shopping-item">
     <span>
         <input type="checkbox">
@@ -28,16 +28,6 @@ function addItem(containerId) {
         🗑
     </button>
 </label>`;
-
-    saveShopping();
-    saveCheckboxes();
-}
-function deleteItem(button) {
-
-    const item =
-        button.parentElement;
-
-    item.remove();
 
     saveShopping();
     saveCheckboxes();
