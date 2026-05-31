@@ -17,4 +17,30 @@ function addMealIngredient() {
 
     container.innerHTML +=
         `<label><input type="checkbox"> ${item}</label><br>`;
+
+    saveShopping();
 }
+function saveShopping() {
+
+    localStorage.setItem(
+        "mealIngredients",
+        document.getElementById("mealIngredients").innerHTML
+    );
+}
+
+function loadShopping() {
+
+    const saved =
+        localStorage.getItem("mealIngredients");
+
+    if(saved) {
+
+        document.getElementById("mealIngredients")
+            .innerHTML = saved;
+    }
+}
+
+window.onload = function() {
+
+    loadShopping();
+};
