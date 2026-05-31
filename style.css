@@ -108,11 +108,11 @@ padding: 6px 0;
     margin: 0;
 }
 .shopping-item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    padding: 8px 0;
     width: 100%;
+    padding: 8px 0;
 }
 .shopping-item span {
     display: flex;
