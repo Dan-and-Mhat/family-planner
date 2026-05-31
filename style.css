@@ -116,3 +116,12 @@ margin-top: 0;
 .delete-btn:hover {
     background: #e60000;
 }
+.edit-btn {
+    background: #ff9500;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 5px;
+}
