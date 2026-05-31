@@ -19,14 +19,14 @@
 </header>
 
 <nav>
-    <button>🛒 Shopping</button>
-    <button>🍽 Meals</button>
-    <button>⭐ Favourites</button>
+    <button onclick="showTab('shopping')">🛒 Shopping</button>
+    <button onclick="showTab('meals')">🍽 Meals</button>
+    <button onclick="showTab('favourites')">⭐ Favourites</button>
 </nav>
 
 <main>
 
-<section>
+<section id="shopping">
     <h2>🛒 Shopping</h2>
 
 <div class="shopping-category">
@@ -55,12 +55,12 @@
 
 </section>
 
-<section>
+<section id="meals" style="display:none;">
     <h2>🍽 Meals</h2>
     <p>Meal planner coming soon...</p>
 </section>
-
-<section>
+    
+<section id="favourites" style="display:none;">
     <h2>⭐ Favourites</h2>
     <p>Favourite recipes coming soon...</p>
 </section>
