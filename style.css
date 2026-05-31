@@ -126,3 +126,11 @@ margin-top: 0;
     padding: 6px 10px;
     margin-right: 5px;
 }
+.edit-btn,
+.delete-btn {
+    padding: 4px 8px;
+    font-size: 14px;
+}
+.shopping-item input:checked + span {
+    text-decoration: line-through;
+}
