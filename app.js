@@ -79,16 +79,6 @@ function loadShopping() {
     }
 }
 
-    const saved =
-        localStorage.getItem("mealIngredients");
-
-    if(saved) {
-
-        document.getElementById("mealIngredients")
-            .innerHTML = saved;
-    }
-}
-
 window.onload = function() {
 
     loadShopping();
