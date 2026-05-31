@@ -29,6 +29,13 @@ function addItem(containerId) {
     </button>
 </label>`;
 
+function deleteItem(button) {
+
+    const item =
+        button.parentElement;
+
+    item.remove();
+
     saveShopping();
     saveCheckboxes();
 }
