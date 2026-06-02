@@ -123,6 +123,8 @@ function loadShopping() {
 window.onload = function() {
 
     loadShopping();
+    
+    loadFavourites();
 
     loadMeals();
 
@@ -192,69 +194,6 @@ function loadCheckboxes() {
                 states[index];
         }
     });
-}
-function saveMeals() {
-
-    const meals = {
-        monday: document.getElementById("mondayMeal").value,
-        tuesday: document.getElementById("tuesdayMeal").value,
-        wednesday: document.getElementById("wednesdayMeal").value,
-        thursday: document.getElementById("thursdayMeal").value,
-        friday: document.getElementById("fridayMeal").value,
-        saturday: document.getElementById("saturdayMeal").value,
-        sunday: document.getElementById("sundayMeal").value
-    };
-
-    localStorage.setItem(
-        "weeklyMeals",
-        JSON.stringify(meals)
-    );
-}
-function loadMeals() {
-
-    const saved =
-        localStorage.getItem("weeklyMeals");
-
-    if (!saved) return;
-
-    const meals =
-        JSON.parse(saved);
-
-    document.getElementById("mondayMeal").value =
-        meals.monday || "";
-
-    document.getElementById("tuesdayMeal").value =
-        meals.tuesday || "";
-
-    document.getElementById("wednesdayMeal").value =
-        meals.wednesday || "";
-
-    document.getElementById("thursdayMeal").value =
-        meals.thursday || "";
-
-    document.getElementById("fridayMeal").value =
-        meals.friday || "";
-
-    document.getElementById("saturdayMeal").value =
-        meals.saturday || "";
-
-    document.getElementById("sundayMeal").value =
-        meals.sunday || "";
-}
-function addFavouriteMeal() {
-
-    const meal = prompt("Meal name:");
-
-    if (!meal) return;
-
-    document.getElementById(
-        "favouriteMeals"
-    ).innerHTML += `
-<label class="shopping-item">
-    <span>${meal}</span>
-</label>`;
-
-    saveFavourites();
 }
 function saveMeals() {
 
@@ -350,4 +289,27 @@ function addFavouriteMeal() {
 </label>`;
 
     saveFavourites();
+}
+function saveFavourites() {
+
+    localStorage.setItem(
+        "favouriteMeals",
+        document.getElementById(
+            "favouriteMeals"
+        ).innerHTML
+    );
+}
+function loadFavourites() {
+
+    const saved =
+        localStorage.getItem(
+            "favouriteMeals"
+        );
+
+    if(saved){
+
+        document.getElementById(
+            "favouriteMeals"
+        ).innerHTML = saved;
+    }
 }
