@@ -256,19 +256,32 @@
 <section id="favourites" style="display:none;">
 
     <h2>⭐ Favourite Meals</h2>
+<div id="favouriteMeals">
+
+    <label class="shopping-item">
+        <span>🍛 Korma</span>
+        <button
+            class="delete-btn"
+            onclick="deleteFavourite(this)">
+            🗑
+        </button>
+    </label>
+
+</div>
+
+<section id="favourites" style="display:none;">
+
+    <h2>⭐ Favourite Meals</h2>
 
     <div id="favouriteMeals">
 
         <label class="shopping-item">
             <span>🍛 Korma</span>
-        </label>
-
-        <label class="shopping-item">
-            <span>🍕 Pizza</span>
-        </label>
-
-        <label class="shopping-item">
-            <span>🐟 Salmon</span>
+            <button
+                class="delete-btn"
+                onclick="deleteFavourite(this)">
+                🗑
+            </button>
         </label>
 
     </div>
@@ -276,7 +289,7 @@
     <button onclick="addFavouriteMeal()">
         ➕ Add Favourite Meal
     </button>
-
+    
 </section>
 
 </main>
