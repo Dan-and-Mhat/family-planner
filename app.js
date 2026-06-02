@@ -241,3 +241,18 @@ function loadMeals() {
     document.getElementById("sundayMeal").value =
         meals.sunday || "";
 }
+function addFavouriteMeal() {
+
+    const meal = prompt("Meal name:");
+
+    if (!meal) return;
+
+    document.getElementById(
+        "favouriteMeals"
+    ).innerHTML += `
+<label class="shopping-item">
+    <span>${meal}</span>
+</label>`;
+
+    saveFavourites();
+}
