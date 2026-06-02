@@ -150,3 +150,29 @@ margin-top: 0;
     border-radius: 8px;
     font-size: 16px;
 }
+.meal-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.meal-card {
+    background: #f8f8fa;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.meal-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.meal-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    font-size: 16px;
+}
