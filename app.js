@@ -256,3 +256,74 @@ function addFavouriteMeal() {
 
     saveFavourites();
 }
+function saveMeals() {
+
+    const days = [
+        "mondayMeal",
+        "tuesdayMeal",
+        "wednesdayMeal",
+        "thursdayMeal",
+        "fridayMeal",
+        "saturdayMeal",
+        "sundayMeal"
+    ];
+
+    days.forEach(day => {
+
+        localStorage.setItem(
+            day,
+            document.getElementById(day).value
+        );
+    });
+
+    updateSummary();
+}
+function loadMeals() {
+    
+document.querySelectorAll(".meal-card input")
+.forEach(input => {
+
+    input.addEventListener(
+        "input",
+        saveMeals
+    );
+});
+    const days = [
+        "mondayMeal",
+        "tuesdayMeal",
+        "wednesdayMeal",
+        "thursdayMeal",
+        "fridayMeal",
+        "saturdayMeal",
+        "sundayMeal"
+    ];
+
+    days.forEach(day => {
+
+        const saved =
+            localStorage.getItem(day);
+
+        if(saved){
+
+            document.getElementById(day).value =
+                saved;
+        }
+    });
+
+    updateSummary();
+}
+function updateSummary() {
+
+    const summary =
+        document.getElementById("summaryContent");
+
+    summary.innerHTML = `
+🍽 Monday: ${document.getElementById("mondayMeal").value}<br>
+🍽 Tuesday: ${document.getElementById("tuesdayMeal").value}<br>
+🍽 Wednesday: ${document.getElementById("wednesdayMeal").value}<br>
+🍽 Thursday: ${document.getElementById("thursdayMeal").value}<br>
+🍽 Friday: ${document.getElementById("fridayMeal").value}<br>
+🍽 Saturday: ${document.getElementById("saturdayMeal").value}<br>
+🍽 Sunday: ${document.getElementById("sundayMeal").value}
+`;
+}
