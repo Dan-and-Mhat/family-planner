@@ -342,3 +342,40 @@ function assignMeal(day) {
         "dayPicker"
     ).style.display = "none";
 }
+function closeDayPicker() {
+
+    document.getElementById(
+        "dayPicker"
+    ).style.display = "none";
+}
+function clearWeek() {
+
+    if(
+        !confirm(
+            "Clear all meals for this week?"
+        )
+    ) return;
+
+    const days = [
+        "mondayMeal",
+        "tuesdayMeal",
+        "wednesdayMeal",
+        "thursdayMeal",
+        "fridayMeal",
+        "saturdayMeal",
+        "sundayMeal"
+    ];
+
+    days.forEach(day => {
+
+        document.getElementById(
+            day
+        ).value = "";
+
+        localStorage.removeItem(
+            day
+        );
+    });
+
+    updateSummary();
+}
