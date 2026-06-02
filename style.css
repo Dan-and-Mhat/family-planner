@@ -182,3 +182,35 @@ margin-top: 0;
     border-radius: 12px;
     margin-bottom: 20px;
 }
+.day-picker {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.day-picker-content {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    min-width: 250px;
+}
+
+.day-picker-content button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #007aff;
+    color: white;
+    cursor: pointer;
+}
