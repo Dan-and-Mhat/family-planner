@@ -134,3 +134,19 @@ margin-top: 0;
 .shopping-item input:checked + span {
     text-decoration: line-through;
 }
+.meal-plan {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.meal-plan label {
+    font-weight: bold;
+}
+
+.meal-plan input {
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    font-size: 16px;
+}
