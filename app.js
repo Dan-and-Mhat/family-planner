@@ -327,3 +327,27 @@ function updateSummary() {
 🍽 Sunday: ${document.getElementById("sundayMeal").value}
 `;
 }
+function addFavouriteMeal() {
+
+    const meal =
+        prompt("Favourite meal:");
+
+    if(!meal) return;
+
+    const container =
+        document.getElementById(
+            "favouriteMeals"
+        );
+
+    container.innerHTML += `
+<label class="shopping-item">
+    <span>${meal}</span>
+    <button
+        class="delete-btn"
+        onclick="deleteFavourite(this)">
+        🗑
+    </button>
+</label>`;
+
+    saveFavourites();
+}
