@@ -153,7 +153,7 @@ function saveCheckboxes() {
 
     const checkboxes =
         document.querySelectorAll(
-            "#mealIngredients input[type='checkbox']"
+            "input[type='checkbox']"
         );
 
     const states = [];
@@ -163,7 +163,7 @@ function saveCheckboxes() {
     });
 
     localStorage.setItem(
-        "mealIngredientStates",
+        "checkboxStates",
         JSON.stringify(states)
     );
 }
@@ -171,7 +171,7 @@ function loadCheckboxes() {
 
     const saved =
         localStorage.getItem(
-            "mealIngredientStates"
+            "checkboxStates"
         );
 
     if (!saved) return;
@@ -181,12 +181,12 @@ function loadCheckboxes() {
 
     const checkboxes =
         document.querySelectorAll(
-            "#mealIngredients input[type='checkbox']"
+            "input[type='checkbox']"
         );
 
-    checkboxes.forEach((box,index) => {
+    checkboxes.forEach((box, index) => {
 
-        if(states[index] !== undefined) {
+        if (states[index] !== undefined) {
 
             box.checked =
                 states[index];
