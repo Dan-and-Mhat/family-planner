@@ -313,3 +313,32 @@ function loadFavourites() {
         ).innerHTML = saved;
     }
 }
+function useFavourite(item) {
+
+    const meal =
+        item.textContent.trim();
+
+    const day =
+        prompt(
+            "Which day? (monday, tuesday, wednesday...)"
+        );
+
+    if (!day) return;
+
+    const input =
+        document.getElementById(
+            day.toLowerCase() + "Meal"
+        );
+
+    if (!input) {
+
+        alert("Day not found");
+
+        return;
+    }
+
+    input.value = meal;
+
+    saveMeals();
+    updateSummary();
+}
