@@ -28,8 +28,7 @@
 
 <section id="shopping">
     <h2>🛒 Shopping</h2>
-
-```
+    
 <div class="shopping-category">
     <h3>
         🍽 Meal Ingredients
@@ -134,7 +133,6 @@
 
     </div>
 </div>
-```
 
 </section>
 
@@ -189,14 +187,19 @@
 
     <h2>⭐ Favourite Meals</h2>
 <div id="favouriteMeals">
-
     <label class="shopping-item">
-        <span>🍛 Korma</span>
+
+        <span onclick="useFavourite(this)"
+              style="cursor:pointer;">
+            🍛 Korma
+        </span>
+
         <button
             class="delete-btn"
             onclick="deleteFavourite(this)">
             🗑
         </button>
+
     </label>
 
 </div>
