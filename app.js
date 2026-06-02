@@ -313,45 +313,32 @@ function loadFavourites() {
         ).innerHTML = saved;
     }
 }
+
+    let selectedMeal = "";
+
 function useFavourite(item) {
 
-    const meal =
+    selectedMeal =
         item.textContent.trim();
 
-    const day =
-        prompt(
-            "Choose:\n" +
-            "1 Monday\n" +
-            "2 Tuesday\n" +
-            "3 Wednesday\n" +
-            "4 Thursday\n" +
-            "5 Friday\n" +
-            "6 Saturday\n" +
-            "7 Sunday"
-        );
-
-    const days = [
-        "monday",
-        "tuesday",
-        "wednesday",
-        "thursday",
-        "friday",
-        "saturday",
-        "sunday"
-    ];
-
-    const selectedDay =
-        days[parseInt(day) - 1];
-
-    if (!selectedDay) return;
+    document.getElementById(
+        "dayPicker"
+    ).style.display = "flex";
+}
+function assignMeal(day) {
 
     const input =
         document.getElementById(
-            selectedDay + "Meal"
+            day + "Meal"
         );
 
-    input.value = meal;
+    input.value =
+        selectedMeal;
 
     saveMeals();
     updateSummary();
+
+    document.getElementById(
+        "dayPicker"
+    ).style.display = "none";
 }
