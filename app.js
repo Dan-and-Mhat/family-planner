@@ -348,11 +348,15 @@ function closeDayPicker() {
         "dayPicker"
     ).style.display = "none";
 }
-function clearWeek() {
+function startNewWeek() {
 
-    if(
+    if (
         !confirm(
-            "Clear all meals for this week?"
+            "Start a new week?\n\n" +
+            "• Clear all planned meals\n" +
+            "• Untick shopping items\n" +
+            "• Keep favourite meals\n" +
+            "• Keep shopping items"
         )
     ) return;
 
@@ -368,14 +372,21 @@ function clearWeek() {
 
     days.forEach(day => {
 
-        document.getElementById(
-            day
-        ).value = "";
+        document.getElementById(day).value = "";
 
-        localStorage.removeItem(
-            day
-        );
+        localStorage.removeItem(day);
     });
+
+    document
+        .querySelectorAll(
+            "input[type='checkbox']"
+        )
+        .forEach(box => {
+
+            box.checked = false;
+        });
+
+    saveCheckboxes();
 
     updateSummary();
 }
