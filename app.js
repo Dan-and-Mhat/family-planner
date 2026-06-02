@@ -280,13 +280,24 @@ function addFavouriteMeal() {
 
     container.innerHTML += `
 <label class="shopping-item">
-    <span>${meal}</span>
+
+    <span onclick="useFavourite(this)">
+        ${meal}
+    </span>
+
     <button
         class="delete-btn"
         onclick="deleteFavourite(this)">
         🗑
     </button>
+
 </label>`;
+
+    saveFavourites();
+}
+function deleteFavourite(button) {
+
+    button.parentElement.remove();
 
     saveFavourites();
 }
