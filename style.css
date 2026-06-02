@@ -176,3 +176,9 @@ margin-top: 0;
     border-radius: 8px;
     font-size: 16px;
 }
+.summary-card {
+    background: #f8f8fa;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
