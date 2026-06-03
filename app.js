@@ -278,10 +278,11 @@ function addFavouriteMeal() {
             "favouriteMeals"
         );
 
-    container.innerHTML += `
-<label class="shopping-item">
+container.innerHTML += `
+<div class="favourite-item">
 
-    <span onclick="useFavourite(this)">
+    <span onclick="useFavourite(this)"
+          style="cursor:pointer;">
         ${meal}
     </span>
 
@@ -290,6 +291,8 @@ function addFavouriteMeal() {
         onclick="deleteFavourite(this)">
         🗑
     </button>
+
+</div>`;
 
 </label>`;
 
