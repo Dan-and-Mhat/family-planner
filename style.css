@@ -238,3 +238,16 @@ margin-top: 0;
 .recipe-btn:hover {
     background: #28a745;
 }
+.favourite-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.favourite-item span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
