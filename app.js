@@ -365,6 +365,7 @@ function loadFavourites() {
 }
 
     let selectedMeal = "";
+    let currentRecipeMeal = null;
 
 function useFavourite(item) {
 
@@ -381,22 +382,51 @@ function openRecipe(button) {
         button.parentElement
               .querySelector("span");
 
-    const currentRecipe =
+    currentRecipeMeal = meal;
+
+    document.getElementById(
+        "recipeTitle"
+    ).textContent =
+        meal.textContent.trim();
+
+    document.getElementById(
+        "recipeText"
+    ).value =
         meal.dataset.recipe || "";
 
-    const newRecipe =
-        prompt(
-            "Recipe:",
-            currentRecipe
-        );
+    document.getElementById(
+        "recipeText"
+    ).readOnly = true;
 
-    if(newRecipe === null)
-        return;
+    document.getElementById(
+        "recipeViewer"
+    ).style.display = "flex";
+}
+function enableRecipeEdit() {
 
-    meal.dataset.recipe =
-        newRecipe;
+    document.getElementById(
+        "recipeText"
+    ).readOnly = false;
+}
+function saveRecipeEditor() {
 
-    saveFavourites();
+    if(currentRecipeMeal){
+
+        currentRecipeMeal.dataset.recipe =
+            document.getElementById(
+                "recipeText"
+            ).value;
+
+        saveFavourites();
+    }
+
+    closeRecipeViewer();
+}
+function closeRecipeViewer() {
+
+    document.getElementById(
+        "recipeViewer"
+    ).style.display = "none";
 }
 function assignMeal(day) {
 
