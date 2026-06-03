@@ -369,8 +369,6 @@ function loadFavourites() {
 
 function useFavourite(item) {
 
-    alert("DAY PICKER");
-
     selectedMeal =
         item.textContent.trim();
 
@@ -379,8 +377,6 @@ function useFavourite(item) {
     ).style.display = "flex";
 }
 function openRecipe(button) {
-
-    console.log("OPEN RECIPE");
 
     const meal =
         button.parentElement
