@@ -294,8 +294,6 @@ container.innerHTML += `
 
 </div>`;
 
-</label>`;
-
     saveFavourites();
 }
 function deleteFavourite(button) {
