@@ -234,7 +234,38 @@
         <button onclick="assignMeal('sunday')">Sunday</button>
 
     </div>
+<div id="recipeViewer"
+     class="day-picker"
+     style="display:none;">
 
+    <div class="day-picker-content">
+
+        <h3 id="recipeTitle">
+            Recipe
+        </h3>
+
+        <textarea
+            id="recipeText"
+            rows="15"
+            readonly>
+        </textarea>
+
+        <button onclick="enableRecipeEdit()">
+            ✏️ Edit Recipe
+        </button>
+
+        <button onclick="saveRecipeEditor()">
+            💾 Save
+        </button>
+
+        <button onclick="closeRecipeViewer()">
+            ❌ Close
+        </button>
+
+    </div>
+
+</div>
+    
 </div>
 </body>
 </html>
