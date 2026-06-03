@@ -386,10 +386,6 @@ function openRecipe(button) {
         button.parentElement
               .querySelector("span");
 
-    const meal =
-        button.parentElement
-              .querySelector("span");
-
     currentRecipeMeal = meal;
 
     document.getElementById(
