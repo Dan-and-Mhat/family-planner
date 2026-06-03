@@ -239,3 +239,12 @@ margin-top: 0;
     flex: 1;
     cursor: pointer;
 }
+#recipeText {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 300px;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
