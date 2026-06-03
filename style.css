@@ -193,17 +193,16 @@ margin-top: 0;
 
     z-index: 1000;
 }
-
 .day-picker-content {
     background: white;
     padding: 20px;
     border-radius: 16px;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
 
-    min-width: 250px;
+    width: 700px;
+    max-width: 90vw;
 }
 
 .day-picker-content button {
@@ -242,7 +241,7 @@ margin-top: 0;
 #recipeText {
     width: 100%;
     box-sizing: border-box;
-    min-height: 300px;
+    min-height: 450px;
     resize: vertical;
     padding: 10px;
     border-radius: 10px;
