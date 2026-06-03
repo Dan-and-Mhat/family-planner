@@ -214,17 +214,7 @@ margin-top: 0;
     color: white;
     cursor: pointer;
 }
-.favourite-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 0;
-}
 
-.favourite-item span {
-    flex: 0;
-    cursor: pointer;
-}
 .recipe-btn {
     background: #34c759;
     border: none;
@@ -241,13 +231,11 @@ margin-top: 0;
 .favourite-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
     padding: 8px 0;
 }
 
 .favourite-item span {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    flex: 1;
     cursor: pointer;
 }
