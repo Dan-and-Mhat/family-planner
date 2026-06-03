@@ -380,8 +380,6 @@ function useFavourite(item) {
 }
 function openRecipe(button) {
 
-    alert("Recipe button clicked");
-
     const meal =
         button.parentElement
               .querySelector("span");
