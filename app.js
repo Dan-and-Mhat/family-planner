@@ -273,18 +273,59 @@ function addFavouriteMeal() {
 
     if(!meal) return;
 
+    let emoji = "🍽";
+
+    const lower =
+        meal.toLowerCase();
+
+    if(lower.includes("korma"))
+        emoji = "🍛";
+
+    else if(lower.includes("pizza"))
+        emoji = "🍕";
+
+    else if(lower.includes("salmon"))
+        emoji = "🐟";
+
+    else if(lower.includes("lasagna"))
+        emoji = "🍝";
+
+    else if(lower.includes("spaghetti"))
+        emoji = "🍝";
+
+    else if(lower.includes("bolognese"))
+        emoji = "🍝";
+
+    else if(lower.includes("burger"))
+        emoji = "🍔";
+
+    else if(lower.includes("carbonara"))
+        emoji = "🍝";
+
+    else if(lower.includes("tuna"))
+        emoji = "🐟";
+
+    else if(lower.includes("gamberi"))
+        emoji = "🦐";
+
     const container =
         document.getElementById(
             "favouriteMeals"
         );
 
-container.innerHTML += `
+    container.innerHTML += `
 <div class="favourite-item">
 
     <span onclick="useFavourite(this)"
           style="cursor:pointer;">
-        ${meal}
+        ${emoji} ${meal}
     </span>
+
+    <button
+        class="recipe-btn"
+        onclick="openRecipe(this)">
+        📖
+    </button>
 
     <button
         class="delete-btn"
