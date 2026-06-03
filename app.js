@@ -313,13 +313,10 @@ function addFavouriteMeal() {
             "favouriteMeals"
         );
 
-    container.innerHTML += `
+container.innerHTML += `
 <div class="favourite-item">
 
-    <span onclick="useFavourite(this)"
-          style="cursor:pointer;">
-        ${emoji} ${meal}
-    </span>
+    <span onclick="useFavourite(this)" style="cursor:pointer;">${emoji} ${meal}</span>
 
     <button
         class="recipe-btn"
