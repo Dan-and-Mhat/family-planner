@@ -273,6 +273,11 @@ function addFavouriteMeal() {
 
     if(!meal) return;
 
+    const recipe =
+        prompt(
+            "Recipe (optional):"
+        ) || "";
+
     let emoji = "🍽";
 
     const lower =
@@ -280,31 +285,22 @@ function addFavouriteMeal() {
 
     if(lower.includes("korma"))
         emoji = "🍛";
-
     else if(lower.includes("pizza"))
         emoji = "🍕";
-
     else if(lower.includes("salmon"))
         emoji = "🐟";
-
     else if(lower.includes("lasagna"))
         emoji = "🍝";
-
     else if(lower.includes("spaghetti"))
         emoji = "🍝";
-
     else if(lower.includes("bolognese"))
         emoji = "🍝";
-
     else if(lower.includes("burger"))
         emoji = "🍔";
-
     else if(lower.includes("carbonara"))
         emoji = "🍝";
-
     else if(lower.includes("tuna"))
         emoji = "🐟";
-
     else if(lower.includes("gamberi"))
         emoji = "🦐";
 
@@ -313,10 +309,14 @@ function addFavouriteMeal() {
             "favouriteMeals"
         );
 
-container.innerHTML += `
+    container.innerHTML += `
 <div class="favourite-item">
 
-    <span onclick="useFavourite(this)" style="cursor:pointer;">${emoji} ${meal}</span>
+    <span onclick="useFavourite(this)"
+          style="cursor:pointer;"
+          data-recipe="${recipe}">
+        ${emoji} ${meal}
+    </span>
 
     <button
         class="recipe-btn"
@@ -374,6 +374,29 @@ function useFavourite(item) {
     document.getElementById(
         "dayPicker"
     ).style.display = "flex";
+}
+function openRecipe(button) {
+
+    const meal =
+        button.parentElement
+              .querySelector("span");
+
+    const currentRecipe =
+        meal.dataset.recipe || "";
+
+    const newRecipe =
+        prompt(
+            "Recipe:",
+            currentRecipe
+        );
+
+    if(newRecipe === null)
+        return;
+
+    meal.dataset.recipe =
+        newRecipe;
+
+    saveFavourites();
 }
 function assignMeal(day) {
 
