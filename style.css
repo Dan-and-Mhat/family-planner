@@ -225,3 +225,16 @@ margin-top: 0;
     flex: 0;
     cursor: pointer;
 }
+.recipe-btn {
+    background: #34c759;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin-right: 5px;
+}
+
+.recipe-btn:hover {
+    background: #28a745;
+}
