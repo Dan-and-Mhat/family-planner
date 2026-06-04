@@ -3,6 +3,8 @@ function showTab(tabName) {
     document.getElementById("shopping").style.display = "none";
     document.getElementById("meals").style.display = "none";
     document.getElementById("favourites").style.display = "none";
+    document.getElementById("dashboard").style.display = "none";
+    document.getElementById("calendar").style.display = "none";
 
     document.getElementById(tabName).style.display = "block";
 }
@@ -147,6 +149,7 @@ window.onload = function() {
                 "checkbox"
             ){
                 saveCheckboxes();
+                showTab("dashboard");
             }
         }
     );
