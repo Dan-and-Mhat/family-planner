@@ -283,7 +283,7 @@ function updateSummary() {
 🍽 Sunday: ${document.getElementById("sundayMeal").value}
 `;
 }
-function addFavouriteMeal() {
+async function addFavouriteMeal() {
 
     const meal =
         prompt("Favourite meal:");
@@ -320,65 +320,25 @@ function addFavouriteMeal() {
         emoji = "🐟";
     else if(lower.includes("gamberi"))
         emoji = "🦐";
+    
+const { error } =
+    await db
+        .from("favourites")
+        .insert([
+            {
+                meal_name: meal,
+                emoji: emoji,
+                recipe: recipe
+            }
+        ]);
 
-    const container =
-        document.getElementById(
-            "favouriteMeals"
-        );
-
-    container.innerHTML += `
-<div class="favourite-item">
-
-    <span onclick="useFavourite(this)"
-          style="cursor:pointer;"
-          data-recipe="${recipe}">
-        ${emoji} ${meal}
-    </span>
-
-    <button
-        class="recipe-btn"
-        onclick="openRecipe(this)">
-        📖
-    </button>
-
-    <button
-        class="delete-btn"
-        onclick="deleteFavourite(this)">
-        🗑
-    </button>
-
-</div>`;
-
-    saveFavourites();
+if(error){
+    console.error(error);
+    alert("Failed to save favourite");
+    return;
 }
-function deleteFavourite(button) {
-
-    button.parentElement.remove();
-
-    saveFavourites();
-}
-function saveFavourites() {
-
-    localStorage.setItem(
-        "favouriteMeals",
-        document.getElementById(
-            "favouriteMeals"
-        ).innerHTML
-    );
-}
-function loadFavourites() {
-
-    const saved =
-        localStorage.getItem(
-            "favouriteMeals"
-        );
-
-    if(saved){
-
-        document.getElementById(
-            "favouriteMeals"
-        ).innerHTML = saved;
-    }
+    
+await loadFavouritesFromSupabase();
 }
 
     let selectedMeal = "";
