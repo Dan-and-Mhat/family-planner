@@ -2,9 +2,9 @@ const SUPABASE_URL =
     "https://oawoebrdioyisdlufxiz.supabase.co";
 
 const SUPABASE_KEY =
-    "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+    "sb_publishable_7NpP75AZhAfgO2LTgEEO_A_SSthULLj";
 
-const supabase =
+const db =
     window.supabase.createClient(
         SUPABASE_URL,
         SUPABASE_KEY
@@ -513,7 +513,7 @@ function startNewWeek() {
 async function testSupabase() {
 
     const { data, error } =
-        await supabase
+        await db
             .from("favourites")
             .select("*");
 
