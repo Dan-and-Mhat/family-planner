@@ -149,7 +149,6 @@ window.onload = function() {
                 "checkbox"
             ){
                 saveCheckboxes();
-                showTab("dashboard");
             }
         }
     );
