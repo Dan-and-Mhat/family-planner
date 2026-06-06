@@ -136,7 +136,7 @@ function loadShopping() {
 
 window.onload = function() {
     
-    testSupabase();
+    loadFavouritesFromSupabase();
 
     loadShopping();
     
@@ -510,7 +510,7 @@ function startNewWeek() {
 
     updateSummary();
 }
-async function testSupabase() {
+async function loadFavouritesFromSupabase() {
 
     const { data, error } =
         await db
@@ -536,9 +536,23 @@ async function testSupabase() {
         container.innerHTML += `
 <div class="favourite-item">
 
-    <span>
+    <span onclick="useFavourite(this)"
+          style="cursor:pointer;"
+          data-recipe="${meal.recipe}">
         ${meal.emoji} ${meal.meal_name}
     </span>
+
+    <button
+        class="recipe-btn"
+        onclick="openRecipe(this)">
+        📖
+    </button>
+
+    <button
+        class="delete-btn"
+        onclick="deleteFavourite(this)">
+        🗑
+    </button>
 
 </div>`;
     });
