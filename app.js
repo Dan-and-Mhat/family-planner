@@ -139,8 +139,6 @@ window.onload = function() {
     loadFavouritesFromSupabase();
 
     loadShopping();
-    
-    loadFavourites();
 
     loadMeals();
 
@@ -393,8 +391,6 @@ function saveRecipeEditor() {
             document.getElementById(
                 "recipeText"
             ).value;
-
-        saveFavourites();
     }
 
     closeRecipeViewer();
