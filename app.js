@@ -1,3 +1,15 @@
+const SUPABASE_URL =
+    "https://oawoebrdioyisdlufxiz.supabase.co";
+
+const SUPABASE_KEY =
+    "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+
+const supabase =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
 function showTab(tabName) {
 
     document.getElementById("shopping").style.display = "none";
@@ -123,6 +135,8 @@ function loadShopping() {
 }
 
 window.onload = function() {
+    
+    testSupabase();
 
     loadShopping();
     
@@ -495,4 +509,17 @@ function startNewWeek() {
     saveCheckboxes();
 
     updateSummary();
+}
+async function testSupabase() {
+
+    const { data, error } =
+        await supabase
+            .from("favourites")
+            .select("*");
+
+    console.log("DATA:", data);
+
+    if(error){
+        console.error(error);
+    }
 }
