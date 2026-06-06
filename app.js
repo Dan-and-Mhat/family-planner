@@ -152,6 +152,7 @@ window.onload = function() {
             }
         }
     );
+    showTab("dashboard");
 };
 function saveCheckboxes() {
 
