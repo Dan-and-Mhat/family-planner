@@ -521,5 +521,25 @@ async function testSupabase() {
 
     if(error){
         console.error(error);
+        return;
     }
+
+    const container =
+        document.getElementById(
+            "favouriteMeals"
+        );
+
+    container.innerHTML = "";
+
+    data.forEach(meal => {
+
+        container.innerHTML += `
+<div class="favourite-item">
+
+    <span>
+        ${meal.emoji} ${meal.meal_name}
+    </span>
+
+</div>`;
+    });
 }
