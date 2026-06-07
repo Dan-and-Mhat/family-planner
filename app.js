@@ -634,7 +634,6 @@ grid.innerHTML += `
 </div>`;
 }
 
-loadCalendarEvents();
 loadCalendarDinners();
 
 }
