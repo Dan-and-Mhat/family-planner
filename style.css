@@ -310,3 +310,9 @@ margin-top: 0;
 
     box-shadow: none;
 }
+.calendar-day.today {
+
+    border: 3px solid #007aff;
+
+    background: #eef6ff;
+}
