@@ -608,9 +608,12 @@ for(
         year === todayYear;
     
 grid.innerHTML += `
-<div class="calendar-day ${
-    isToday ? "today" : ""
-}">
+<div
+    class="calendar-day ${
+        isToday ? "today" : ""
+    }"
+    onclick="editDay(${day})"
+>
 
     <div class="day-number">
         ${day}
@@ -626,4 +629,18 @@ grid.innerHTML += `
 </div>`;
 }
 
+}
+function editDay(day) {
+
+    const note =
+        prompt(
+            "Event for " + day
+        );
+
+    if(note){
+
+        alert(
+            "Saved: " + note
+        );
+    }
 }
