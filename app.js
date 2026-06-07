@@ -624,9 +624,10 @@ grid.innerHTML += `
     id="events-${day}">
 </div>
 
-    <div class="day-dinner">
-        🍽
-    </div>
+<div
+    class="day-dinner"
+    id="dinner-${day}">
+</div>
 
 </div>`;
 }
