@@ -612,11 +612,6 @@ grid.innerHTML += `
     isToday ? "today" : ""
 }">
 
-grid.innerHTML += `
-<div class="calendar-day ${
-    isToday ? "today" : ""
-}">
-
     <div class="day-number">
         ${day}
     </div>
