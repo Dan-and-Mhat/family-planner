@@ -633,6 +633,11 @@ grid.innerHTML += `
 
 </div>`;
 }
+
+loadCalendarEvents();
+loadCalendarDinners();
+
+}
 function editDay(day) {
 
     const note =
