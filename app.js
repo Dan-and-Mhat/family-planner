@@ -522,11 +522,11 @@ function generateCalendar() {
     const today =
         new Date();
 
-    const year =
-        today.getFullYear();
+const year =
+    currentYear;
 
-    const month =
-        today.getMonth();
+const month =
+    currentMonth;
     
     const todayDate =
         today.getDate();
@@ -653,6 +653,31 @@ function editDay(day) {
     ${note}
 </div>`;
 }
+function previousMonth() {
+
+    currentMonth--;
+
+    if(currentMonth < 0){
+
+        currentMonth = 11;
+        currentYear--;
+    }
+
+    generateCalendar();
+}
+
+function nextMonth() {
+
+    currentMonth++;
+
+    if(currentMonth > 11){
+
+        currentMonth = 0;
+        currentYear++;
+    }
+
+    generateCalendar();
+}
 function publishWeekToCalendar() {
 
    const meals = {
@@ -718,3 +743,8 @@ function loadCalendarDinners() {
         }
     }
 }
+let currentYear =
+    new Date().getFullYear();
+
+let currentMonth =
+    new Date().getMonth();
