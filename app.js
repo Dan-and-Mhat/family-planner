@@ -633,7 +633,27 @@ grid.innerHTML += `
 
 </div>`;
 }
+    const firstDay =
+    new Date(
+        year,
+        month,
+        1
+    ).getDay();
+    const mondayFirst =
+    firstDay === 0
+        ? 6
+        : firstDay - 1;
+    for(
+    let i = 0;
+    i < mondayFirst;
+    i++
+)
+{
 
+    grid.innerHTML += `
+<div class="calendar-day empty">
+</div>`;
+}
 }
 function editDay(day) {
 
