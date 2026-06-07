@@ -146,6 +146,8 @@ window.onload = function() {
 
     generateCalendar();
 
+    loadCalendarDinners();
+    
     document.querySelectorAll(".meal-plan input")
     .forEach(input => {
         input.addEventListener(
@@ -701,6 +703,37 @@ function publishWeekToCalendar() {
         if(
             dinnerBox &&
             meals[day]
+        ){
+
+            dinnerBox.textContent =
+                meals[day];
+            localStorage.setItem(
+            "calendarDinners",
+            JSON.stringify(meals)
+        );
+        }
+    }
+}
+function loadCalendarDinners() {
+
+    const meals =
+        JSON.parse(
+            localStorage.getItem(
+                "calendarDinners"
+            )
+        ) || {};
+
+    for(
+        const day in meals
+    ){
+
+        const dinnerBox =
+            document.getElementById(
+                `dinner-${day}`
+            );
+
+        if(
+            dinnerBox
         ){
 
             dinnerBox.textContent =
