@@ -654,25 +654,39 @@ function publishWeekToCalendar() {
     const meals = {
 
         9:
-            document.getElementById("monday").value,
+            document.getElementById(
+                "mondayMeal"
+            ).value,
 
         10:
-            document.getElementById("tuesday").value,
+            document.getElementById(
+                "tuesdayMeal"
+            ).value,
 
         11:
-            document.getElementById("wednesday").value,
+            document.getElementById(
+                "wednesdayMeal"
+            ).value,
 
         12:
-            document.getElementById("thursday").value,
+            document.getElementById(
+                "thursdayMeal"
+            ).value,
 
         13:
-            document.getElementById("friday").value,
+            document.getElementById(
+                "fridayMeal"
+            ).value,
 
         14:
-            document.getElementById("saturday").value,
+            document.getElementById(
+                "saturdayMeal"
+            ).value,
 
         15:
-            document.getElementById("sunday").value
+            document.getElementById(
+                "sundayMeal"
+            ).value
     };
 
     for(
