@@ -656,43 +656,16 @@ function editDay(day) {
 }
 function publishWeekToCalendar() {
 
-    const meals = {
+   const meals = {
 
-        9:
-            document.getElementById(
-                "mondayMeal"
-            ).value,
-
-        10:
-            document.getElementById(
-                "tuesdayMeal"
-            ).value,
-
-        11:
-            document.getElementById(
-                "wednesdayMeal"
-            ).value,
-
-        12:
-            document.getElementById(
-                "thursdayMeal"
-            ).value,
-
-        13:
-            document.getElementById(
-                "fridayMeal"
-            ).value,
-
-        14:
-            document.getElementById(
-                "saturdayMeal"
-            ).value,
-
-        15:
-            document.getElementById(
-                "sundayMeal"
-            ).value
-    };
+    8: document.getElementById("mondayMeal").value,
+    9: document.getElementById("tuesdayMeal").value,
+    10: document.getElementById("wednesdayMeal").value,
+    11: document.getElementById("thursdayMeal").value,
+    12: document.getElementById("fridayMeal").value,
+    13: document.getElementById("saturdayMeal").value,
+    14: document.getElementById("sundayMeal").value
+};
 
     for(
         const day in meals
@@ -710,12 +683,14 @@ function publishWeekToCalendar() {
 
             dinnerBox.textContent =
                 meals[day];
+        }  
+    }
             localStorage.setItem(
             "calendarDinners",
             JSON.stringify(meals)
         );
-        }
-    }
+        
+    
 }
 function loadCalendarDinners() {
 
