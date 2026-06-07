@@ -144,6 +144,8 @@ window.onload = function() {
 
     loadCheckboxes();
 
+    generateCalendar();
+
     document.querySelectorAll(".meal-plan input")
     .forEach(input => {
         input.addEventListener(
@@ -512,4 +514,70 @@ async function loadFavouritesFromSupabase() {
 
 </div>`;
     });
+}
+function generateCalendar() {
+
+    const today =
+        new Date();
+
+    const year =
+        today.getFullYear();
+
+    const month =
+        today.getMonth();
+
+    const monthNames = [
+
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    document.getElementById(
+        "calendarMonth"
+    ).textContent =
+        "📅 " +
+        monthNames[month] +
+        " " +
+        year;
+
+    const grid =
+        document.getElementById(
+            "calendarGrid"
+        );
+
+    grid.innerHTML = "";
+
+    const daysInMonth =
+        new Date(
+            year,
+            month + 1,
+            0
+        ).getDate();
+
+    for(
+        let day = 1;
+        day <= daysInMonth;
+        day++
+    ){
+
+        grid.innerHTML += `
+<div class="calendar-day">
+
+    <div class="day-number">
+        ${day}
+    </div>
+
+</div>`;
+    }
 }
