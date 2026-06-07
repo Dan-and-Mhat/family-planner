@@ -649,3 +649,48 @@ function editDay(day) {
     ${note}
 </div>`;
 }
+function publishWeekToCalendar() {
+
+    const meals = {
+
+        9:
+            document.getElementById("monday").value,
+
+        10:
+            document.getElementById("tuesday").value,
+
+        11:
+            document.getElementById("wednesday").value,
+
+        12:
+            document.getElementById("thursday").value,
+
+        13:
+            document.getElementById("friday").value,
+
+        14:
+            document.getElementById("saturday").value,
+
+        15:
+            document.getElementById("sunday").value
+    };
+
+    for(
+        const day in meals
+    ){
+
+        const dinnerBox =
+            document.getElementById(
+                `dinner-${day}`
+            );
+
+        if(
+            dinnerBox &&
+            meals[day]
+        ){
+
+            dinnerBox.textContent =
+                meals[day];
+        }
+    }
+}
