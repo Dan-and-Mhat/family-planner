@@ -278,3 +278,35 @@ margin-top: 0;
 
     margin-bottom: 8px;
 }
+#calendarHeaders {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+#calendarHeaders div {
+
+    background: #007aff;
+
+    color: white;
+
+    padding: 10px;
+
+    border-radius: 10px;
+}
+.calendar-day.empty {
+
+    background: transparent;
+
+    box-shadow: none;
+}
