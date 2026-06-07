@@ -283,9 +283,20 @@
 </section> 
 <section id="calendar" style="display:none;">
 
-    <h2 id="calendarMonth">
-        📅 Calendar
-    </h2>
+<div class="calendar-header">
+
+    <button onclick="previousMonth()">
+        ◀
+    </button>
+
+    <h2 id="calendarMonth"></h2>
+
+    <button onclick="nextMonth()">
+        ▶
+    </button>
+
+</div>
+
 <div id="calendarHeaders">
 
     <div>Mon</div>
