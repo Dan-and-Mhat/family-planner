@@ -619,8 +619,10 @@ grid.innerHTML += `
         ${day}
     </div>
 
-    <div class="day-events">
-    </div>
+<div
+    class="day-events"
+    id="events-${day}">
+</div>
 
     <div class="day-dinner">
         🍽
@@ -637,10 +639,12 @@ function editDay(day) {
             "Event for " + day
         );
 
-    if(note){
+    if(!note) return;
 
-        alert(
-            "Saved: " + note
-        );
-    }
+    document.getElementById(
+        `events-${day}`
+    ).innerHTML += `
+<div>
+    ${note}
+</div>`;
 }
