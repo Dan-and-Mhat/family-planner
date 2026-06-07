@@ -565,11 +565,44 @@ function generateCalendar() {
             0
         ).getDate();
 
-    for(
-        let day = 1;
-        day <= daysInMonth;
-        day++
-    ){
+   const firstDay =
+    new Date(
+        year,
+        month,
+        1
+    ).getDay();
+
+const offset =
+    firstDay === 0
+    ? 6
+    : firstDay - 1;
+
+for(
+    let i = 0;
+    i < offset;
+    i++
+){
+
+    grid.innerHTML += `
+<div class="calendar-day empty">
+</div>`;
+}
+
+for(
+    let day = 1;
+    day <= daysInMonth;
+    day++
+){
+
+    grid.innerHTML += `
+<div class="calendar-day">
+
+    <div class="day-number">
+        ${day}
+    </div>
+
+</div>`;
+}
 
         grid.innerHTML += `
 <div class="calendar-day">
