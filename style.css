@@ -247,3 +247,34 @@ margin-top: 0;
     border-radius: 10px;
     border: 1px solid #ccc;
 }
+#calendarGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 10px;
+}
+
+.calendar-day {
+
+    background: #f8f8fa;
+
+    border-radius: 12px;
+
+    min-height: 120px;
+
+    padding: 10px;
+
+    box-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.08);
+}
+
+.day-number {
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
