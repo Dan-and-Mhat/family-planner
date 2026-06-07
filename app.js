@@ -603,14 +603,3 @@ for(
 
 </div>`;
 }
-
-        grid.innerHTML += `
-<div class="calendar-day">
-
-    <div class="day-number">
-        ${day}
-    </div>
-
-</div>`;
-    }
-}
