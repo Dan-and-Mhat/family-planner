@@ -311,8 +311,7 @@ margin-top: 0;
     box-shadow: none;
 }
 .calendar-day.today {
-
     border: 3px solid #007aff;
-
     background: #eef6ff;
+    box-shadow: 0 0 12px rgba(0,122,255,0.3);
 }
