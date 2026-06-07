@@ -607,8 +607,10 @@ for(
         month === todayMonth &&
         year === todayYear;
     
-    grid.innerHTML += `
-<div class="calendar-day">
+grid.innerHTML += `
+<div class="calendar-day ${
+    isToday ? "today" : ""
+}">
 
     <div class="day-number">
         ${day}
