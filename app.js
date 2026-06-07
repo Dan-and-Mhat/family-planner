@@ -525,6 +525,15 @@ function generateCalendar() {
 
     const month =
         today.getMonth();
+    
+    const todayDate =
+        today.getDate();
+
+    const todayMonth =
+        today.getMonth();
+
+    const todayYear =
+        today.getFullYear();
 
     const monthNames = [
 
@@ -593,7 +602,11 @@ for(
     day <= daysInMonth;
     day++
 ){
-
+    const isToday =
+        day === todayDate &&
+        month === todayMonth &&
+        year === todayYear;
+    
     grid.innerHTML += `
 <div class="calendar-day">
 
