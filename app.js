@@ -595,7 +595,15 @@ for(
     i < offset;
     i++
 ){
+const eventText =
+    localStorage.getItem(
+        "events-" + day
+    ) || "";
 
+const dinnerText =
+    localStorage.getItem(
+        "dinner-" + day
+    ) || "";
     grid.innerHTML += `
 <div class="calendar-day empty">
 </div>`;
@@ -606,12 +614,23 @@ for(
     day <= daysInMonth;
     day++
 ){
+
     const isToday =
         day === todayDate &&
         month === todayMonth &&
         year === todayYear;
-    
-grid.innerHTML += `
+
+    const eventText =
+        localStorage.getItem(
+            "events-" + day
+        ) || "";
+
+    const dinnerText =
+        localStorage.getItem(
+            "dinner-" + day
+        ) || "";
+
+    grid.innerHTML += `
 <div
     class="calendar-day ${
         isToday ? "today" : ""
@@ -626,18 +645,16 @@ grid.innerHTML += `
     <div
         class="day-events"
         id="events-${day}">
+        ${eventText}
     </div>
 
     <div
         class="day-dinner"
         id="dinner-${day}">
+        ${dinnerText}
     </div>
 
 </div>`;
-}
-    
-loadCalendarDinners();
-
 }
 function editDay(day) {
 
