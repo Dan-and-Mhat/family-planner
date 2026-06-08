@@ -656,6 +656,7 @@ for(
 
 </div>`;
 }
+}
 function editDay(day) {
 
     selectedCalendarDay = day;
