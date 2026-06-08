@@ -10,6 +10,8 @@ const db =
         SUPABASE_KEY
     );
 
+let selectedCalendarDay = null;
+
 function showTab(tabName) {
 
     document.getElementById("shopping").style.display = "none";
@@ -621,37 +623,83 @@ grid.innerHTML += `
         ${day}
     </div>
 
-<div
-    class="day-events"
-    id="events-${day}">
-</div>
+    <div
+        class="day-events"
+        id="events-${day}">
+    </div>
 
-<div
-    class="day-dinner"
-    id="dinner-${day}">
-</div>
+    <div
+        class="day-dinner"
+        id="dinner-${day}">
+    </div>
 
 </div>`;
 }
-
+    
 loadCalendarDinners();
 
 }
 function editDay(day) {
 
-    const note =
-        prompt(
-            "Event for " + day
-        );
-
-    if(!note) return;
+    selectedCalendarDay = day;
 
     document.getElementById(
-        `events-${day}`
-    ).innerHTML += `
-<div>
-    ${note}
-</div>`;
+        "popupDate"
+    ).textContent =
+        day + " " +
+        document.getElementById(
+            "calendarMonth"
+        ).textContent;
+
+    document.getElementById(
+        "popupEvents"
+    ).value =
+        localStorage.getItem(
+            "events-" + day
+        ) || "";
+
+    document.getElementById(
+        "popupDinner"
+    ).value =
+        localStorage.getItem(
+            "dinner-" + day
+        ) || "";
+
+    document.getElementById(
+        "calendarDayPopup"
+    ).style.display =
+        "flex";
+}
+function saveDayPopup() {
+
+    localStorage.setItem(
+        "events-" +
+        selectedCalendarDay,
+
+        document.getElementById(
+            "popupEvents"
+        ).value
+    );
+
+    localStorage.setItem(
+        "dinner-" +
+        selectedCalendarDay,
+
+        document.getElementById(
+            "popupDinner"
+        ).value
+    );
+
+    closeDayPopup();
+
+    generateCalendar();
+}
+function closeDayPopup() {
+
+    document.getElementById(
+        "calendarDayPopup"
+    ).style.display =
+        "none";
 }
 function previousMonth() {
 
