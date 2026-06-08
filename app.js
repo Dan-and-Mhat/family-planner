@@ -699,18 +699,11 @@ function saveDayPopup() {
         ).value
     );
 
-    localStorage.setItem(
-        "dinner-" +
-        selectedCalendarDay,
-
-        document.getElementById(
-            "popupDinner"
-        ).value
-    );
-
     closeDayPopup();
 
     generateCalendar();
+
+    loadCalendarDinners();
 }
 function closeDayPopup() {
 
