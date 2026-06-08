@@ -272,6 +272,44 @@
     </div>
 
 </div>
+<div id="calendarDayPopup"
+     class="day-picker"
+     style="display:none;">
+
+    <div class="day-picker-content">
+
+        <h3 id="popupDate">
+            Day
+        </h3>
+
+        <label>
+            Events
+        </label>
+
+        <textarea
+            id="popupEvents"
+            rows="4">
+        </textarea>
+
+        <label>
+            Dinner
+        </label>
+
+        <input
+            id="popupDinner"
+            type="text">
+
+        <button onclick="saveDayPopup()">
+            💾 Save
+        </button>
+
+        <button onclick="closeDayPopup()">
+            ❌ Close
+        </button>
+
+    </div>
+
+</div>    
 <section id="dashboard">
 
     <h2>🏠 Family Dashboard</h2>
